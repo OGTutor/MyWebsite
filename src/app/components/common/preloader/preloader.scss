@@ -1,0 +1,97 @@
+.preloader {
+    --size: 250px;
+    --first-color: #04e2f1;
+    --second-color: #04e2f1;
+    --third-color: #04e2f1;
+    --thickness: 5px;
+    --duration: 1.5s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all;
+    opacity: 3;
+    z-index: 3;
+    visibility: visible;
+    left: 0;
+    top: 0;
+    background: url("../../../../../public/preloader/preloaderG.gif") center
+            no-repeat,
+        black;
+
+    .preloader_content {
+        position: relative;
+        width: var(--size);
+        height: var(--size);
+    }
+
+    .preloader_first_one {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: var(--duration) -1s linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
+    }
+
+    .preloader_second_two {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: var(--duration) -0.5s linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
+    }
+
+    .preloader_third_three {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: var(--duration) linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
+    }
+
+    .preloader_first_one {
+        border-bottom: var(--thickness);
+        animation-name: first;
+    }
+    .preloader_second_two {
+        border-bottom: var(--thickness);
+        animation-name: second;
+    }
+    .preloader_third_three {
+        border-bottom: var(--thickness);
+        animation-name: third;
+    }
+    &.done {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
