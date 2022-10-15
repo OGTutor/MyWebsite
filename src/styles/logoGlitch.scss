@@ -1,0 +1,61 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.boxGlitch {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	.glitch {
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		line-height: 5rem;
+
+		color: #fff;
+		font-family: 'assassin-st', sans-serif;
+
+		position: relative;
+		padding: 30px;
+		&:before,
+		&:after {
+			content: 'CompanyName';
+			color: #fff;
+			position: absolute;
+			top: 0;
+			overflow: hidden;
+			padding: 30px;
+		}
+		&:before {
+			left: 3px;
+			text-shadow: -3px 0 blue;
+			animation: glitch-before 2s linear 0s infinite alternate-reverse;
+		}
+		&:after {
+			left: -3px;
+			text-shadow: -3px 0 red;
+			animation: glitch-after 2s linear 0s infinite alternate-reverse;
+		}
+	}
+}
+
+@keyframes glitch-before {
+	$steps: 30;
+	@for $i from 0 through $steps {
+		#{percentage($i * (1/ $steps))} {
+			clip: rect(random(150) + px, 350px, random(150) + px, 20px);
+		}
+	}
+}
+
+@keyframes glitch-after {
+	$steps: 30;
+	@for $i from 0 through $steps {
+		#{percentage($i * (1/ $steps))} {
+			clip: rect(random(150) + px, 350px, random(150) + px, 20px);
+		}
+	}
+}
