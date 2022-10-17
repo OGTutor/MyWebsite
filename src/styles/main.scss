@@ -199,21 +199,18 @@
 
                 .canvas-element {
                     width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    padding: 0 2em;
-                    height: 100%;
-                    align-items: center;
+                    height: 200px;
+                    position: absolute;
+                    top: auto;
+                    left: 0;
+                    margin: 0;
                 }
                 .web-gl {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    padding: 0 2em;
-                    height: 100%;
-                    align-items: center;
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
                 }
             }
             &.header_two {

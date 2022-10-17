@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import Layout from "./components/ui/layout";
 import HomePage from "./components/common/page/homePage/homePage";
+import ServicesPage from "./components/common/page/servicesPage/servicesPage";
+import PortfolioPage from "./components/common/page/portfolioPage/portfolioPage";
 import Preloader from "./components/common/preloader/preloader";
 
 const App = () => {
@@ -16,13 +19,14 @@ const App = () => {
     return loading ? (
         <Preloader />
     ) : (
-        <div className="container" id="container">
-            <div className="background" id="background">
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                </Routes>
-            </div>
-        </div>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="services" element={<ServicesPage />} />
+                <Route path="portfolio" element={<PortfolioPage />} />
+                <Route path="*" element={<HomePage />} />
+            </Route>
+        </Routes>
     );
 };
 

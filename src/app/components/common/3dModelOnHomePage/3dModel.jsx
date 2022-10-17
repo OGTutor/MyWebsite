@@ -9,7 +9,7 @@ const Model3D = () => {
         <div className="canvas-element">
             <Canvas
                 className="web-gl"
-                camera={{ position: [320, -70, 60], zoom: 4.5 }}
+                camera={{ position: [320, -70, 60], zoom: 4 }}
             >
                 <OrbitControls />
                 <hemisphereLight intensity={0.1} />
