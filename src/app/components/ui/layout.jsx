@@ -1,14 +1,21 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate, Routes, Route } from "react-router-dom";
+
+import Home from "../../layouts/home";
+import Services from "../../layouts/services";
+import Portfolio from "../../layouts/portfolio";
 
 const Layout = () => {
+    const navigate = useNavigate();
     const container = document.querySelector(".container");
-    const screens = document.querySelectorAll(".screen");
-    console.log(screens);
+    const screens = [Home, Services];
+    console.log(screens[1].name);
+
+    const goServices = () => navigate("/services");
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
-        replaceBg(event.target.name);
+        // replaceBg(event.target.name);
         console.log(event.target.name);
         // screens.forEach((screen) => {
         //     screen.style.display = "none";
@@ -16,8 +23,7 @@ const Layout = () => {
         // });
     };
 
-    const handleOnClick = () => {
-        console.log(event);
+    const handleOnClick = (event) => {
         event.preventDefault();
         container.classList.toggle("active");
         // screens.forEach((screen) => {
@@ -39,48 +45,45 @@ const Layout = () => {
             <div className="links">
                 <ul>
                     <li>
-                        <a
+                        <Link
                             onMouseEnter={(event) => handleMouseEnter(event)}
                             onClick={(event) => handleOnClick(event)}
-                            to="/"
                             className="link"
                             name="Home"
                             dataLink="Home"
                             style={{ "--i": "0.1s" }}
                         >
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             onMouseEnter={(event) => handleMouseEnter(event)}
                             onClick={(event) => handleOnClick(event)}
                             className="link"
-                            to="/services"
                             name="Services"
                             dataLink="Services"
                             style={{ "--i": "0.1s" }}
                         >
                             Services
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
+                        <Link
                             onMouseEnter={(event) => handleMouseEnter(event)}
                             onClick={(event) => handleOnClick(event)}
                             className="link"
-                            to="/portfolio"
                             name="Portfolio"
                             dataLink="Portfolio"
                             style={{ "--i": "0.1s" }}
                         >
                             Portfolio
-                        </a>
+                        </Link>
                     </li>
                     {/* <li>
                         <a
                             className="link"
-                            dataLink="/Testimonials"
+                            dataLink="Testimonials"
                             href="#"
                             style={{ "--i": "0.25s" }}
                         >

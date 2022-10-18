@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomePage from "../components/common/page/mainPage/homePage";
+import HomePage from "../components/common/page/homePage/homePage";
 
 const Home = () => {
     return (

@@ -6,32 +6,32 @@ const PortfolioPage = () => {
     return (
         <>
             <NavBar />
-            <div class="screen" id="Portfolio">
-                <div class="main">
-                    <header class="header_three">
-                        <div class="container">
-                            <div id="progressBar" class="progressBar"></div>
+            <div className="screen" id="Portfolio">
+                <div className="main">
+                    <header className="header_three">
+                        <div className="container">
+                            <div id="progressBar" className="progressBar"></div>
                             <div id="scrollPath"></div>
-                            <section class="gallery">
-                                <div class="frame">
-                                    <div class="frame__content">
+                            <section className="gallery">
+                                <div className="frame">
+                                    <div className="frame__content">
                                         <h2>Beautiful World</h2>
                                     </div>
                                 </div>
 
-                                <div class="frame">
-                                    <div class="frame__content">
+                                <div className="frame">
+                                    <div className="frame__content">
                                         <div
-                                            class="frame-media frame-media_left"
+                                            className="frame-media frame-media_left"
                                             style="background-image: url(./img/ScrollImages/1.jpg)"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <video
-                                            class="frame-media frame-media_right"
+                                            className="frame-media frame-media_right"
                                             src="media/video_optimized.mp4"
                                             autoplay
                                             loop
@@ -40,10 +40,10 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div class="frame"></div>
+                                <div className="frame"></div>
 
-                                <div class="frame">
-                                    <div class="frame__content text-right">
+                                <div className="frame">
+                                    <div className="frame__content text-right">
                                         <h3>Pure planet</h3>
                                         <p>
                                             Lorem ipsum dolor sit amet,
@@ -55,30 +55,30 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <div
-                                            class="frame-media frame-media_left"
+                                            className="frame-media frame-media_left"
                                             style="background-image: url(./img/ScrollImages/2.jpg)"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div class="frame"></div>
+                                <div className="frame"></div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <div
-                                            class="frame-media frame-media_right"
+                                            className="frame-media frame-media_right"
                                             style="background-image: url(./img/ScrollImages/3.jpg)"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div class="frame"></div>
+                                <div className="frame"></div>
 
-                                <div class="frame">
-                                    <div class="frame__content text-left">
+                                <div className="frame">
+                                    <div className="frame__content text-left">
                                         <h3>Ask the Mountains</h3>
                                         <p>
                                             Lorem ipsum dolor sit amet,
@@ -91,19 +91,19 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <div
-                                            class="frame-media frame-media_right"
+                                            className="frame-media frame-media_right"
                                             style="background-image: url(./img/ScrollImages/4.jpg)"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div class="frame">
-                                    <div class="frame__content">
+                                <div className="frame">
+                                    <div className="frame__content">
                                         <video
-                                            class="frame-media frame-media_left"
+                                            className="frame-media frame-media_left"
                                             src="media/video_optimized.mp4"
                                             autoplay
                                             loop
@@ -112,22 +112,22 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div class="frame"></div>
-                                <div class="frame"></div>
+                                <div className="frame"></div>
+                                <div className="frame"></div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <div
-                                            class="frame-media frame-media_right"
+                                            className="frame-media frame-media_right"
                                             style="background-image: url(./img/ScrollImages/5.jpg)"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div class="frame frame_bg">
-                                    <div class="frame__content">
+                                <div className="frame frame_bg">
+                                    <div className="frame__content">
                                         <video
-                                            class="frame-media"
+                                            className="frame-media"
                                             src="media/video_optimized.mp4"
                                             autoplay
                                             loop
@@ -136,11 +136,11 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div class="frame"></div>
-                                <div class="frame"></div>
+                                <div className="frame"></div>
+                                <div className="frame"></div>
 
-                                <div class="frame">
-                                    <div class="frame__content">
+                                <div className="frame">
+                                    <div className="frame__content">
                                         © WebDesign Master
                                     </div>
                                 </div>
@@ -148,15 +148,19 @@ const PortfolioPage = () => {
                         </div>
 
                         <img
-                            class="soundbutton paused"
+                            className="soundbutton paused"
                             src="./img/ScrollImages/gif/sound.gif"
                             alt="Alt"
                         />
-                        <audio class="audio" src="media/sound.mp3" loop></audio>
+                        <audio
+                            className="audio"
+                            src="media/sound.mp3"
+                            loop
+                        ></audio>
                     </header>
                 </div>
-                <div class="shadow one"></div>
-                <div class="shadow two"></div>
+                <div className="shadow one"></div>
+                <div className="shadow two"></div>
             </div>
         </>
     );

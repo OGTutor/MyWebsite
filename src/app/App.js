@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/ui/layout";
-import HomePage from "./components/common/page/homePage/homePage";
-import ServicesPage from "./components/common/page/servicesPage/servicesPage";
-import PortfolioPage from "./components/common/page/portfolioPage/portfolioPage";
+
+import Home from "./layouts/home";
+import Services from "./layouts/services";
+import Portfolio from "./layouts/portfolio";
+
 import Preloader from "./components/common/preloader/preloader";
 
 const App = () => {
@@ -21,10 +23,10 @@ const App = () => {
     ) : (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<HomePage />} />
-                <Route path="services" element={<ServicesPage />} />
-                <Route path="portfolio" element={<PortfolioPage />} />
-                <Route path="*" element={<HomePage />} />
+                <Route index element={<Home />} />
+                <Route path="services" element={<Services />} />
+                <Route path="portfolio" element={<Portfolio />} />
+                <Route path="*" element={<Home />} />
             </Route>
         </Routes>
     );
