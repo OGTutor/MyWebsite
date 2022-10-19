@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet, useNavigate, Routes, Route } from "react-router-dom";
 
 import Home from "../../layouts/home";
@@ -6,40 +6,62 @@ import Services from "../../layouts/services";
 import Portfolio from "../../layouts/portfolio";
 
 const Layout = () => {
-    const navigate = useNavigate();
     const container = document.querySelector(".container");
-    const screens = [Home, Services];
-    console.log(screens[1].name);
-
-    const goServices = () => navigate("/services");
+    const [screen, setScreen] = useState("Home");
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
-        // replaceBg(event.target.name);
+        if (event.target.name === "Home") {
+            setScreen("Home");
+        }
+        if (event.target.name === "Services") {
+            setScreen("Services");
+        }
+        if (event.target.name === "Portfolio") {
+            setScreen("Portfolio");
+        }
+        if (event.target.name === "Testimonials") {
+            setScreen("Testimonials");
+        }
+        if (event.target.name === "About") {
+            setScreen("About");
+        }
+        if (event.target.name === "Contact") {
+            setScreen("Contact");
+        }
+        if (event.target.name === "Clock") {
+            setScreen("Clock");
+        }
         console.log(event.target.name);
-        // screens.forEach((screen) => {
-        //     screen.style.display = "none";
-        //     screens[0].style.display = "block";
-        // });
     };
-
     const handleOnClick = (event) => {
         event.preventDefault();
         container.classList.toggle("active");
-        // screens.forEach((screen) => {
-        //     screen.style.display = "none";
-        //     screens[0].style.display = "block";
-        // });
     };
 
-    function replaceBg(id) {
-        const bg = document.getElementById(id);
-        console.log(bg);
-        screens.forEach((screen) => {
-            screen.style.display = "none";
-        });
-        bg.style.display = "block";
-    }
+    const setComponent = () => {
+        switch (screen) {
+            case "Home":
+                return <Home />;
+            case "Services":
+                return <Services />;
+            case "Portfolio":
+                return <Portfolio />;
+
+            // case "Testimonials":
+            //     return <Testimonials />;
+
+            // case "About":
+            //     return <About />;
+
+            // case "Contact":
+            //     return <Contact />;
+
+            // case "Clock":
+            //     return <Clock />;
+        }
+    };
+
     return (
         <>
             <div className="links">
@@ -122,7 +144,8 @@ const Layout = () => {
                     </li> */}
                 </ul>
             </div>
-            <Outlet />
+            {setComponent()}
+            {/* <Outlet /> */}
         </>
     );
 };
