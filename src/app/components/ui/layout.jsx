@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Home from "../../layouts/home";
 import Services from "../../layouts/services";
 import Portfolio from "../../layouts/portfolio";
+import Testimonials from "../../layouts/testimonials";
 
 const Layout = () => {
     const container = document.querySelector(".container");
@@ -47,9 +48,8 @@ const Layout = () => {
                 return <Services />;
             case "Portfolio":
                 return <Portfolio />;
-
-            // case "Testimonials":
-            //     return <Testimonials />;
+            case "Testimonials":
+                return <Testimonials />;
 
             // case "About":
             //     return <About />;
@@ -72,7 +72,6 @@ const Layout = () => {
                             onClick={(event) => handleOnClick(event)}
                             className="link"
                             name="Home"
-                            dataLink="Home"
                             style={{ "--i": "0.1s" }}
                         >
                             Home
@@ -84,8 +83,7 @@ const Layout = () => {
                             onClick={(event) => handleOnClick(event)}
                             className="link"
                             name="Services"
-                            dataLink="Services"
-                            style={{ "--i": "0.1s" }}
+                            style={{ "--i": "0.15s" }}
                         >
                             Services
                         </Link>
@@ -96,23 +94,23 @@ const Layout = () => {
                             onClick={(event) => handleOnClick(event)}
                             className="link"
                             name="Portfolio"
-                            dataLink="Portfolio"
-                            style={{ "--i": "0.1s" }}
+                            style={{ "--i": "0.2s" }}
                         >
                             Portfolio
                         </Link>
                     </li>
-                    {/* <li>
-                        <a
+                    <li>
+                        <Link
+                            onMouseEnter={(event) => handleMouseEnter(event)}
+                            onClick={(event) => handleOnClick(event)}
                             className="link"
-                            dataLink="Testimonials"
-                            href="#"
+                            name="Testimonials"
                             style={{ "--i": "0.25s" }}
                         >
                             Testimonials
-                        </a>
+                        </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <a
                             className="link"
                             dataLink="About"
