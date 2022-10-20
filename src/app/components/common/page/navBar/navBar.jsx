@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./styles/navBar.scss";
+
 const NavBar = () => {
     const container = document.querySelector(".container");
 

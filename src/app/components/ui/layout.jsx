@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet, useNavigate, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Home from "../../layouts/home";
 import Services from "../../layouts/services";

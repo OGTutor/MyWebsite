@@ -17,9 +17,7 @@
     visibility: visible;
     left: 0;
     top: 0;
-    background: url("../../../../../public/preloader/preloaderG.gif") center
-            no-repeat,
-        black;
+    background: url("./media/preloaderG.gif") center no-repeat, black;
 
     .preloader_content {
         position: relative;
@@ -93,5 +91,32 @@
     &.done {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@keyframes first {
+    0% {
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes second {
+    0% {
+        transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes third {
+    0% {
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(60deg) rotateY(0deg) rotateZ(360deg);
     }
 }

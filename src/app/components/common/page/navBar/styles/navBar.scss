@@ -1,0 +1,51 @@
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 0.3rem;
+    .menu {
+        max-width: 72rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        .logo {
+        }
+        .burger {
+            height: 4rem;
+            width: 3rem;
+            cursor: url(../../../../../../../public/cursor/arrow.cur) 4 12, auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .bar {
+                width: 1.9rem;
+                height: 1.5px;
+                border-radius: 2px;
+                background-color: #eee;
+                transition: 0.3s;
+                position: relative;
+                &:after,
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: inherit;
+                    height: inherit;
+                    background: #eee;
+                    transition: 0.5s;
+                }
+                &:after {
+                    transform: translateY(9px);
+                }
+                &:before {
+                    transform: translateY(-9px);
+                }
+            }
+        }
+    }
+}

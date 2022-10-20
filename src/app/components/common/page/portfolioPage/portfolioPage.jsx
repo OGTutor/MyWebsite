@@ -1,8 +1,74 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import NavBar from "../navBar/navBar";
 
+import "./styles/scroll.css";
+
+import image from "./media/img/neon-japan-light.jpg";
+import video from "./media/video/preloader.mp4";
+import gif from "./media/video/gif/sound.gif";
+import sound from "./media/sound.mp3";
+
 const PortfolioPage = () => {
+    window.onscroll = function () {
+        const zSpacing = -1000;
+        let lastPos = zSpacing / 5;
+        const $frames = document.getElementsByClassName("frame");
+        const frames = Array.from($frames);
+        const zVals = [];
+
+        const progressBar = document.getElementsByClassName("progressBar");
+
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progressHeight = (window.pageYOffset / totalHeight) * 100;
+
+        for (let i = 0; i < progressBar.length; i++) {
+            progressBar[i].style.height = progressHeight + "%";
+        }
+
+        const top = document.documentElement.scrollTop;
+        const delta = lastPos - top;
+
+        lastPos = top;
+
+        frames.forEach(function (n, i) {
+            zVals.push(i * zSpacing + zSpacing);
+            zVals[i] += delta * -5.5;
+            const frame = frames[i];
+            const transform = `translateZ(${zVals[i]}px)`;
+            const opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
+            frame.setAttribute(
+                "style",
+                `transform: ${transform}; opacity: ${opacity}`
+            );
+        });
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 1);
+    }, []);
+
+    // Audio
+
+    const handleClickOnSoundButton = (event) => {
+        const soundButton = document.querySelector(".soundbutton");
+        const audio = document.querySelector(".audio");
+
+        soundButton.classList.toggle("paused");
+        audio.paused ? audio.play() : audio.pause();
+    };
+
+    window.onfocus = function () {
+        const soundButton = document.querySelector(".soundbutton");
+        const audio = document.querySelector(".audio");
+        soundButton.classList.contains("paused") ? audio.pause() : audio.play();
+    };
+
+    window.onblur = function () {
+        const audio = document.querySelector(".audio");
+        audio.pause();
+    };
+
     return (
         <>
             <NavBar />
@@ -15,7 +81,7 @@ const PortfolioPage = () => {
                             <section className="gallery">
                                 <div className="frame">
                                     <div className="frame__content">
-                                        <h2>Beautiful World</h2>
+                                        <h2>Portfolio Page</h2>
                                     </div>
                                 </div>
 
@@ -23,7 +89,9 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_left"
-                                            style="background-image: url(./img/ScrollImages/1.jpg)"
+                                            style={{
+                                                backgroundImage: `url(${image})`
+                                            }}
                                         ></div>
                                     </div>
                                 </div>
@@ -32,8 +100,8 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <video
                                             className="frame-media frame-media_right"
-                                            src="media/video_optimized.mp4"
-                                            autoplay
+                                            src={`${video}`}
+                                            autoPlay
                                             loop
                                             muted
                                         ></video>
@@ -44,7 +112,7 @@ const PortfolioPage = () => {
 
                                 <div className="frame">
                                     <div className="frame__content text-right">
-                                        <h3>Pure planet</h3>
+                                        <h3>Lorem ipsum</h3>
                                         <p>
                                             Lorem ipsum dolor sit amet,
                                             consectetur elit adipisicing. Nemo
@@ -59,7 +127,9 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_left"
-                                            style="background-image: url(./img/ScrollImages/2.jpg)"
+                                            style={{
+                                                backgroundImage: `url(${image})`
+                                            }}
                                         ></div>
                                     </div>
                                 </div>
@@ -70,7 +140,9 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
-                                            style="background-image: url(./img/ScrollImages/3.jpg)"
+                                            style={{
+                                                backgroundImage: `url(${image})`
+                                            }}
                                         ></div>
                                     </div>
                                 </div>
@@ -79,7 +151,7 @@ const PortfolioPage = () => {
 
                                 <div className="frame">
                                     <div className="frame__content text-left">
-                                        <h3>Ask the Mountains</h3>
+                                        <h3>Lorem ipsum</h3>
                                         <p>
                                             Lorem ipsum dolor sit amet,
                                             consectetur elit. Rerum dolorem
@@ -95,7 +167,9 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
-                                            style="background-image: url(./img/ScrollImages/4.jpg)"
+                                            style={{
+                                                backgroundImage: `url(${image})`
+                                            }}
                                         ></div>
                                     </div>
                                 </div>
@@ -104,8 +178,8 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <video
                                             className="frame-media frame-media_left"
-                                            src="media/video_optimized.mp4"
-                                            autoplay
+                                            src={`${video}`}
+                                            autoPlay
                                             loop
                                             muted
                                         ></video>
@@ -119,7 +193,9 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
-                                            style="background-image: url(./img/ScrollImages/5.jpg)"
+                                            style={{
+                                                backgroundImage: `url(${image})`
+                                            }}
                                         ></div>
                                     </div>
                                 </div>
@@ -128,8 +204,8 @@ const PortfolioPage = () => {
                                     <div className="frame__content">
                                         <video
                                             className="frame-media"
-                                            src="media/video_optimized.mp4"
-                                            autoplay
+                                            src={`${video}`}
+                                            autoPlay
                                             loop
                                             muted
                                         ></video>
@@ -141,7 +217,7 @@ const PortfolioPage = () => {
 
                                 <div className="frame">
                                     <div className="frame__content">
-                                        © WebDesign Master
+                                        © OGTutor
                                     </div>
                                 </div>
                             </section>
@@ -149,14 +225,11 @@ const PortfolioPage = () => {
 
                         <img
                             className="soundbutton paused"
-                            src="./img/ScrollImages/gif/sound.gif"
+                            onClick={(event) => handleClickOnSoundButton(event)}
+                            src={`${gif}`}
                             alt="Alt"
                         />
-                        <audio
-                            className="audio"
-                            src="media/sound.mp3"
-                            loop
-                        ></audio>
+                        <audio className="audio" src={`${sound}`} loop></audio>
                     </header>
                 </div>
                 <div className="shadow one"></div>
