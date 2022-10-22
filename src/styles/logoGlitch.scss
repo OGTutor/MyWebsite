@@ -21,11 +21,12 @@
             align-items: center;
             height: 100%;
             .glitch {
-                font-size: 1rem;
+                top: 1px;
+                font-size: 1.4rem;
                 font-weight: 600;
                 text-transform: uppercase;
-                letter-spacing: 2px;
-                line-height: 5rem;
+                letter-spacing: 4px;
+                line-height: 7rem;
 
                 color: #fff;
                 font-family: "assassin-st", sans-serif;
@@ -34,7 +35,7 @@
                 padding: 30px;
                 &:before,
                 &:after {
-                    content: "CompanyName";
+                    content: "OGTutor";
                     color: #fff;
                     position: absolute;
                     top: 0;

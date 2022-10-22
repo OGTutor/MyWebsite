@@ -18,6 +18,7 @@
     left: 0;
     top: 0;
     background: url("./media/preloaderG.gif") center no-repeat, black;
+    box-shadow: inset 10px 10px 300px #000;
 
     .preloader_content {
         position: relative;

@@ -18,7 +18,7 @@ const NavBar = () => {
                             <div className="lightbar"></div>
                             <div className="topLayer"></div>
                             <div className="boxGlitch">
-                                <h3 className="glitch">CompanyName</h3>
+                                <h3 className="glitch">OGTutor</h3>
                             </div>
                         </div>
                     </div>
