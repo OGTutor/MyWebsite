@@ -6,6 +6,7 @@ import Services from "../../layouts/services";
 import Portfolio from "../../layouts/portfolio";
 import Testimonials from "../../layouts/testimonials";
 import About from "../../layouts/about";
+import Contact from "../../layouts/contact";
 
 const Layout = () => {
     const container = document.querySelector(".container");
@@ -52,12 +53,8 @@ const Layout = () => {
                 return <Testimonials />;
             case "About":
                 return <About />;
-
-            // case "Contact":
-            //     return <Contact />;
-
-            // case "Clock":
-            //     return <Clock />;
+            case "Contact":
+                return <Contact />;
         }
     };
 
@@ -120,26 +117,17 @@ const Layout = () => {
                             About
                         </Link>
                     </li>
-                    {/* <li>
-                        <a
+                    <li>
+                        <Link
+                            onMouseEnter={(event) => handleMouseEnter(event)}
+                            onClick={(event) => handleOnClick(event)}
                             className="link"
-                            dataLink="Contact"
-                            href="#"
+                            name="Contact"
                             style={{ "--i": "0.35s" }}
                         >
                             Contact
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a
-                            className="link"
-                            dataLink="Clock"
-                            href="#"
-                            style={{ "--i": "0.4s" }}
-                        >
-                            Clock
-                        </a>
-                    </li> */}
                 </ul>
             </div>
             {setComponent()}

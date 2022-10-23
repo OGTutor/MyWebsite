@@ -8,6 +8,7 @@ import Services from "./layouts/services";
 import Portfolio from "./layouts/portfolio";
 import Testimonials from "./layouts/testimonials";
 import About from "./layouts/about";
+import Contact from "./layouts/contact";
 
 import Preloader from "./components/common/preloader/preloader";
 
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path="portfolio" element={<Portfolio />} />
                 <Route path="testimonials" element={<Testimonials />} />
                 <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact />} />
                 <Route path="*" element={<Home />} />
             </Route>
         </Routes>

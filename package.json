@@ -19,6 +19,7 @@
         "slick-carousel": "^1.8.1",
         "swiper": "^8.4.4",
         "three": "^0.145.0",
+        "vanilla-tilt": "^1.7.2",
         "web-vitals": "^2.1.4"
     },
     "scripts": {

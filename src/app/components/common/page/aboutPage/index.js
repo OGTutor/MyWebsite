@@ -1,2 +1,2 @@
-import AboutPage from "./homePage";
+import AboutPage from "./aboutPage";
 export default AboutPage;
