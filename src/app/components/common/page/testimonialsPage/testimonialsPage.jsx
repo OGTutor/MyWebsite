@@ -83,7 +83,7 @@ const TestimonialsPage = () => {
                                             className="swiper-wrapper"
                                             {...settings}
                                         >
-                                            {Object.entries(content).map(
+                                            {Object.values(content).map(
                                                 (element, idx) => (
                                                     <div
                                                         key={idx}
@@ -98,7 +98,7 @@ const TestimonialsPage = () => {
                                                                 <div
                                                                     className="showcase-carousel__image"
                                                                     style={{
-                                                                        backgroundImage: `url(${element[1].image})`
+                                                                        backgroundImage: `url(${element.image})`
                                                                     }}
                                                                 ></div>
                                                             </div>
@@ -106,14 +106,12 @@ const TestimonialsPage = () => {
                                                                 <div
                                                                     className="showcase-carousel__image"
                                                                     style={{
-                                                                        backgroundImage: `url(${element[1].image})`
+                                                                        backgroundImage: `url(${element.image})`
                                                                     }}
                                                                 ></div>
                                                             </div>
                                                         </div>
-                                                        <p>
-                                                            {element[1].title}
-                                                        </p>
+                                                        <p>{element.title}</p>
                                                     </div>
                                                 )
                                             )}

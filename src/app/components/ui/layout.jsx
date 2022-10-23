@@ -5,6 +5,7 @@ import Home from "../../layouts/home";
 import Services from "../../layouts/services";
 import Portfolio from "../../layouts/portfolio";
 import Testimonials from "../../layouts/testimonials";
+import About from "../../layouts/about";
 
 const Layout = () => {
     const container = document.querySelector(".container");
@@ -12,26 +13,25 @@ const Layout = () => {
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
-        if (event.target.name === "Home") {
-            setScreen("Home");
-        }
-        if (event.target.name === "Services") {
-            setScreen("Services");
-        }
-        if (event.target.name === "Portfolio") {
-            setScreen("Portfolio");
-        }
-        if (event.target.name === "Testimonials") {
-            setScreen("Testimonials");
-        }
-        if (event.target.name === "About") {
-            setScreen("About");
-        }
-        if (event.target.name === "Contact") {
-            setScreen("Contact");
-        }
-        if (event.target.name === "Clock") {
-            setScreen("Clock");
+        switch (event.target.name) {
+            case "Home":
+                setScreen("Home");
+                break;
+            case "Services":
+                setScreen("Services");
+                break;
+            case "Portfolio":
+                setScreen("Portfolio");
+                break;
+            case "Testimonials":
+                setScreen("Testimonials");
+                break;
+            case "About":
+                setScreen("About");
+                break;
+            case "Contact":
+                setScreen("Contact");
+                break;
         }
         console.log(event.target.name);
     };
@@ -50,9 +50,8 @@ const Layout = () => {
                 return <Portfolio />;
             case "Testimonials":
                 return <Testimonials />;
-
-            // case "About":
-            //     return <About />;
+            case "About":
+                return <About />;
 
             // case "Contact":
             //     return <Contact />;
@@ -110,17 +109,18 @@ const Layout = () => {
                             Testimonials
                         </Link>
                     </li>
-                    {/* <li>
-                        <a
+                    <li>
+                        <Link
+                            onMouseEnter={(event) => handleMouseEnter(event)}
+                            onClick={(event) => handleOnClick(event)}
                             className="link"
-                            dataLink="About"
-                            href="#"
+                            name="About"
                             style={{ "--i": "0.3s" }}
                         >
                             About
-                        </a>
+                        </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <a
                             className="link"
                             dataLink="Contact"

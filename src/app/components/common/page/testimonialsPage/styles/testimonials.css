@@ -48,7 +48,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center -65px;
-    animation: k-light 3s ease-in-out infinite;
+    animation: k-light 20s ease-in-out infinite;
 }
 
 .showcase__video {
@@ -269,13 +269,13 @@
 }
 @keyframes k-light {
     0% {
-        opacity: 0.2;
+        opacity: 0;
     }
     50% {
-        opacity: 0.4;
+        opacity: 0.5;
     }
     100% {
-        opacity: 0.2;
+        opacity: 0;
     }
 }
 
