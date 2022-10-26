@@ -29,6 +29,7 @@
                 border-radius: 2px;
                 background-color: #eee;
                 transition: 0.3s;
+                will-change: transform;
                 position: relative;
                 &:after,
                 &:before {
@@ -38,6 +39,7 @@
                     height: inherit;
                     background: #eee;
                     transition: 0.5s;
+                    will-change: transform;
                 }
                 &:after {
                     transform: translateY(9px);

@@ -99,6 +99,7 @@
 
 .showcase-carousel .swiper-wrapper {
     transition: cubic-bezier(0.4, 0, 0, 1);
+    will-change: transform;
 }
 
 .showcase-carousel__item {
@@ -109,6 +110,7 @@
     transform: scale(0.6);
     transition: opacity 1.8s cubic-bezier(0.4, 0, 0, 1),
         transform 1.8s cubic-bezier(0.4, 0, 0, 1);
+    will-change: transform;
 }
 
 .showcase-carousel__item::after {
@@ -210,6 +212,7 @@
     font-family: assassin-st;
     opacity: 0;
     transition: opacity 0.75s ease-out;
+    will-change: transform;
     position: absolute;
     transform: rotate(-90deg);
     left: 0;
@@ -250,6 +253,7 @@
     font-family: assassin-st;
     opacity: 0;
     transition: opacity 0.75s ease-out;
+    will-change: transform;
     position: absolute;
     transform: rotate(-90deg);
     left: 0;
@@ -267,6 +271,7 @@
 .showcase-navigation_prev > *.swiper-button-disabled {
     display: none;
 }
+
 @keyframes k-light {
     0% {
         opacity: 0;

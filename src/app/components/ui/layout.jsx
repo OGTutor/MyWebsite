@@ -7,6 +7,9 @@ import Portfolio from "../../layouts/portfolio";
 import Testimonials from "../../layouts/testimonials";
 import About from "../../layouts/about";
 import Contact from "../../layouts/contact";
+import Clock from "../common/clock/clock";
+
+import "../common/button/button.scss";
 
 const Layout = () => {
     const container = document.querySelector(".container");
@@ -62,6 +65,25 @@ const Layout = () => {
         <>
             <div className="links">
                 <ul>
+                    <li>
+                        <div className="btn">
+                            <a
+                                onMouseEnter={(event) =>
+                                    handleMouseEnter(event)
+                                }
+                                onClick={(event) => handleOnClick(event)}
+                                className="button"
+                                name="Home"
+                                style={{ "--i": "0.1s" }}
+                            >
+                                <span className="button__line button__line--top"></span>
+                                <span className="button__line button__line--right"></span>
+                                <span className="button__line button__line--bottom"></span>
+                                <span className="button__line button__line--left"></span>
+                                Neon Button
+                            </a>
+                        </div>
+                    </li>
                     <li>
                         <Link
                             onMouseEnter={(event) => handleMouseEnter(event)}
@@ -131,6 +153,7 @@ const Layout = () => {
                 </ul>
             </div>
             {setComponent()}
+            <Clock />
             {/* <Outlet /> */}
         </>
     );

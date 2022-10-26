@@ -17,6 +17,7 @@
         letter-spacing: 4px;
         overflow: hidden;
         transition: 0.2s;
+        will-change: transform;
         cursor: url(../../../../../public/cursor/arrow.cur) 4 12, auto;
     }
 
@@ -36,6 +37,7 @@
         left: 100%;
         transition: 1s;
         transition-delay: 0.25s;
+        will-change: transform;
     }
 
     .button__line--bottom {
@@ -49,6 +51,7 @@
         right: 100%;
         transition: 1s;
         transition-delay: 0.25s;
+        will-change: transform;
     }
 
     .button__line--left {
@@ -62,6 +65,7 @@
         bottom: 100%;
         transition: 1s;
         transition-delay: 0s;
+        will-change: transform;
     }
 
     .button__line--right {
@@ -75,13 +79,16 @@
         top: 100%;
         transition: 1s;
         transition-delay: 0s;
+        will-change: transform;
     }
 
     .button:hover {
         box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+        border-radius: 25px;
         background-color: #2196f3;
         color: #333;
         transition: 0.5s;
         transition-delay: 1s;
+        will-change: transform;
     }
 }

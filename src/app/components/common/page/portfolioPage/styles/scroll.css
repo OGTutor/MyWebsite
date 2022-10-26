@@ -113,6 +113,7 @@ video.frame-media_left {
     cursor: url(../cursor/arrow.cur) 4 12, auto;
     width: 80px;
     transition: 0.25s ease;
+    will-change: transform;
 }
 .soundbutton.paused {
     opacity: 0.25;

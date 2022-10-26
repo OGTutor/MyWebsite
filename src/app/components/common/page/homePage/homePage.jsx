@@ -14,11 +14,6 @@ const HomePage = () => {
                         <Model3D />
                         <div className="header">
                             <div className="header_item">
-                                <div
-                                    id="progressBar"
-                                    className="progressBar"
-                                ></div>
-                                <div id="scrollPath"></div>
                                 <h2 className="title">Home</h2>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur,
