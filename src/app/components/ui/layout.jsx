@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Home from "../../layouts/home";
 import Services from "../../layouts/services";
@@ -9,14 +9,18 @@ import About from "../../layouts/about";
 import Contact from "../../layouts/contact";
 import Clock from "../common/clock/clock";
 
-import "../common/button/button.scss";
+import Button from "../common/button/button";
 
 const Layout = () => {
     const container = document.querySelector(".container");
+    const navigate = useNavigate();
     const [screen, setScreen] = useState("Home");
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
+
+        navigate(`/${screen.toLowerCase()}`, { replace: true });
+
         switch (event.target.name) {
             case "Home":
                 setScreen("Home");
@@ -66,95 +70,69 @@ const Layout = () => {
             <div className="links">
                 <ul>
                     <li>
-                        <div className="btn">
-                            <a
-                                onMouseEnter={(event) =>
-                                    handleMouseEnter(event)
-                                }
-                                onClick={(event) => handleOnClick(event)}
-                                className="button"
-                                name="Home"
-                                style={{ "--i": "0.1s" }}
-                            >
-                                <span className="button__line button__line--top"></span>
-                                <span className="button__line button__line--right"></span>
-                                <span className="button__line button__line--bottom"></span>
-                                <span className="button__line button__line--left"></span>
-                                Neon Button
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="Home"
                             name="Home"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.1s" }}
-                        >
-                            Home
-                        </Link>
+                            className="link"
+                        />
                     </li>
                     <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="Services"
                             name="Services"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.15s" }}
-                        >
-                            Services
-                        </Link>
+                            className="link"
+                        />
                     </li>
                     <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="Portfolio"
                             name="Portfolio"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.2s" }}
-                        >
-                            Portfolio
-                        </Link>
+                            className="link"
+                        />
                     </li>
                     <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="Testimonials"
                             name="Testimonials"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.25s" }}
-                        >
-                            Testimonials
-                        </Link>
+                            className="link"
+                        />
                     </li>
                     <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="About"
                             name="About"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.3s" }}
-                        >
-                            About
-                        </Link>
+                            className="link"
+                        />
                     </li>
                     <li>
-                        <Link
-                            onMouseEnter={(event) => handleMouseEnter(event)}
-                            onClick={(event) => handleOnClick(event)}
-                            className="link"
+                        <Button
+                            content="Contact"
                             name="Contact"
+                            handleMouseEnter={handleMouseEnter}
+                            handleOnClick={handleOnClick}
                             style={{ "--i": "0.35s" }}
-                        >
-                            Contact
-                        </Link>
+                            className="link"
+                        />
                     </li>
                 </ul>
             </div>
             {setComponent()}
             <Clock />
-            {/* <Outlet /> */}
         </>
     );
 };

@@ -1,0 +1,16 @@
+.canvas-element {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: auto;
+    left: 0;
+    margin: 0;
+    z-index: 101;
+}
+.web-gl {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}

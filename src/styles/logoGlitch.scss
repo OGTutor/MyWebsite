@@ -10,10 +10,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80px;
-        width: 250px;
+        height: 100px;
+        width: 300px;
         opacity: 1;
-        background: url("../../public/neonSign.png") no-repeat top center/cover;
+        background: url("../../public/logo/neon.png") no-repeat center / contain;
         animation: image-animation 0.1s linear infinite;
         .boxGlitch {
             display: flex;

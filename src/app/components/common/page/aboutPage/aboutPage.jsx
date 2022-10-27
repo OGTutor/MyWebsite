@@ -1,7 +1,6 @@
 import React from "react";
 
 import NavBar from "../navBar/navBar";
-import Button from "../../button/button";
 
 const AboutPage = () => {
     return (
@@ -23,7 +22,6 @@ const AboutPage = () => {
                                     adipisicing elit. Maiores unde nulla odio
                                     saepe, eius provident.
                                 </p>
-                                <Button />
                             </div>
                         </div>
                     </header>

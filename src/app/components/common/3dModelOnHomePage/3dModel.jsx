@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+
+import "./styles/3dModel.css";
 
 import Model from "./model";
 
@@ -11,7 +12,6 @@ const Model3D = () => {
                 className="web-gl"
                 camera={{ position: [320, -70, 60], zoom: 4 }}
             >
-                <OrbitControls />
                 <hemisphereLight intensity={0.1} />
                 <spotLight
                     position={[50, 600, 100]}
