@@ -8,13 +8,13 @@ import Testimonials from "../../layouts/testimonials";
 import About from "../../layouts/about";
 import Contact from "../../layouts/contact";
 import Clock from "../common/clock/clock";
-
+import video from "./media/MainTheme.mp4";
 import Button from "../common/button/button";
 
 const Layout = () => {
-    const container = document.querySelector(".container");
-    const navigate = useNavigate();
     const [screen, setScreen] = useState("Home");
+    const navigate = useNavigate();
+    const container = document.querySelector(".container");
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
@@ -41,7 +41,6 @@ const Layout = () => {
                 setScreen("Contact");
                 break;
         }
-        console.log(event.target.name);
     };
     const handleOnClick = (event) => {
         event.preventDefault();
@@ -132,7 +131,14 @@ const Layout = () => {
                 </ul>
             </div>
             {setComponent()}
-            <Clock />
+            {/* <Clock /> */}
+            <video
+                src={`${video}`}
+                className="showcase__video"
+                autoPlay
+                loop
+                muted
+            />
         </>
     );
 };
