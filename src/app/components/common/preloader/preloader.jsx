@@ -2,6 +2,8 @@ import React from "react";
 
 import "./preloader.scss";
 
+import video from "./media/NewPreloader.mp4";
+
 const Preloader = () => {
     return (
         <div className="preloader" id="page-preloader">
@@ -13,6 +15,13 @@ const Preloader = () => {
                 <div className="preloader_third"></div>
                 <div className="preloader_third_three"></div>
             </div>
+            <video
+                src={`${video}`}
+                className="showcase__video"
+                autoPlay
+                loop
+                muted
+            />
         </div>
     );
 };

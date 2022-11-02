@@ -18,7 +18,6 @@
     visibility: visible;
     left: 0;
     top: 0;
-    background: url("./media/preloaderG.gif") center no-repeat, black;
     box-shadow: inset 10px 10px 300px #000;
 
     .preloader_content {
@@ -43,6 +42,32 @@
         );
         border-image-slice: 1;
     }
+    .preloader_first {
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        animation: var(--duration) -1s linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
+    }
+    .preloader_first {
+        border-bottom: var(--thickness);
+        animation-name: first;
+    }
+    .preloader_first_one {
+        border-bottom: var(--thickness);
+        animation-name: first;
+    }
 
     .preloader_second_two {
         position: absolute;
@@ -59,6 +84,32 @@
             #04e2f1 90%
         );
         border-image-slice: 1;
+    }
+    .preloader_second {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        animation: var(--duration) -0.5s linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
+    }
+    .preloader_second {
+        border-bottom: var(--thickness);
+        animation-name: second;
+    }
+    .preloader_second_two {
+        border-bottom: var(--thickness);
+        animation-name: second;
     }
 
     .preloader_third_three {
@@ -77,19 +128,33 @@
         );
         border-image-slice: 1;
     }
-
-    .preloader_first_one {
-        border-bottom: var(--thickness);
-        animation-name: first;
+    .preloader_third {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        animation: var(--duration) linear infinite;
+        border: 5px solid transparent;
+        border-image: linear-gradient(
+            to left top,
+            #04e2f1 10%,
+            transparent 30%,
+            transparent 70%,
+            #04e2f1 90%
+        );
+        border-image-slice: 1;
     }
-    .preloader_second_two {
+    .preloader_third {
         border-bottom: var(--thickness);
-        animation-name: second;
+        animation-name: third;
     }
     .preloader_third_three {
         border-bottom: var(--thickness);
         animation-name: third;
     }
+
     &.done {
         opacity: 0;
         visibility: hidden;
