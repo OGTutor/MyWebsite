@@ -232,6 +232,7 @@ const PortfolioPage = () => {
                         <audio className="audio" src={`${sound}`} loop></audio>
                     </header>
                 </div>
+                <div className="main__background"></div>
                 <div className="shadow one"></div>
                 <div className="shadow two"></div>
             </div>

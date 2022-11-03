@@ -84,63 +84,69 @@ const TestimonialsPage = () => {
             <div className="screen" id="Testimonials">
                 <div className="main">
                     <header className="header_four">
-                        <section className="showcase">
-                            <h2 className="showcase__header">
-                                Hard <span>Skills</span>
-                            </h2>
-                            <div className="showcase__content-wrapper">
-                                <div className="showcase__content">
-                                    <div className="showcase-carousel">
-                                        <Slider
-                                            className="swiper-wrapper"
-                                            {...settings}
-                                        >
-                                            {Object.values(content).map(
-                                                (element, idx) => (
-                                                    <div
-                                                        key={idx}
-                                                        className={
-                                                            idx === imageIndex
-                                                                ? "swiper-slide-active showcase-carousel__item"
-                                                                : "swiper-slide showcase-carousel__item"
-                                                        }
-                                                    >
-                                                        <div className="showcase-carousel__image-wrapper">
-                                                            <div className="showcase-carousel__image-left">
-                                                                <div
-                                                                    className="showcase-carousel__image"
-                                                                    style={{
-                                                                        backgroundImage: `url(${element.image})`
-                                                                    }}
-                                                                ></div>
+                        <div className="container">
+                            <section className="showcase">
+                                <h2 className="showcase__header">
+                                    Hard <span>Skills</span>
+                                </h2>
+                                <div className="showcase__content-wrapper">
+                                    <div className="showcase__content">
+                                        <div className="showcase-carousel">
+                                            <Slider
+                                                className="swiper-wrapper"
+                                                {...settings}
+                                            >
+                                                {Object.values(content).map(
+                                                    (element, idx) => (
+                                                        <div
+                                                            key={idx}
+                                                            className={
+                                                                idx ===
+                                                                imageIndex
+                                                                    ? "swiper-slide-active showcase-carousel__item"
+                                                                    : "swiper-slide showcase-carousel__item"
+                                                            }
+                                                        >
+                                                            <div className="showcase-carousel__image-wrapper">
+                                                                <div className="showcase-carousel__image-left">
+                                                                    <div
+                                                                        className="showcase-carousel__image"
+                                                                        style={{
+                                                                            backgroundImage: `url(${element.image})`
+                                                                        }}
+                                                                    ></div>
+                                                                </div>
+                                                                <div className="showcase-carousel__image-right">
+                                                                    <div
+                                                                        className="showcase-carousel__image"
+                                                                        style={{
+                                                                            backgroundImage: `url(${element.image})`
+                                                                        }}
+                                                                    ></div>
+                                                                </div>
                                                             </div>
-                                                            <div className="showcase-carousel__image-right">
-                                                                <div
-                                                                    className="showcase-carousel__image"
-                                                                    style={{
-                                                                        backgroundImage: `url(${element.image})`
-                                                                    }}
-                                                                ></div>
-                                                            </div>
+                                                            <p>
+                                                                {element.title}
+                                                            </p>
                                                         </div>
-                                                        <p>{element.title}</p>
-                                                    </div>
-                                                )
-                                            )}
-                                        </Slider>
+                                                    )
+                                                )}
+                                            </Slider>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <video
-                                src={`${smokeVideo}`}
-                                className="showcase__video"
-                                autoPlay
-                                loop
-                                muted
-                            />
-                        </section>
+                                <video
+                                    src={`${smokeVideo}`}
+                                    className="showcase__video"
+                                    autoPlay
+                                    loop
+                                    muted
+                                />
+                            </section>
+                        </div>
                     </header>
                 </div>
+                <div className="main__background"></div>
                 <div className="shadow one"></div>
                 <div className="shadow two"></div>
             </div>

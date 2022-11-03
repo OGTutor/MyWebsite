@@ -374,24 +374,61 @@
         &:after {
             transform: translateY(0) rotate(-45deg);
         }
+        will-change: transform;
     }
     .main {
         content: "";
         position: absolute;
-        background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+        background: linear-gradient(
+            45deg,
+            transparent,
+            #e6fb04,
+            #45f3ff,
+            #ff6600,
+            #00ff66,
+            #00ffff,
+            #ff00ff,
+            #ff0099,
+            #6e0dd0,
+            #ff3300,
+            #099fff
+        );
+        background-size: 400%;
         animation: main-animation 1s ease, animate 6s linear infinite;
         cursor: url(../../public/cursor/arrow.cur) 4 12, auto;
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
+        transform: perspective(1300px) rotateY(20deg) translateZ(405px)
             scale(0.5);
+        will-change: transform;
         &:hover {
             transform: perspective(1300px) rotateY(20deg) translateZ(380px)
                 scale(0.5);
-            + .shadow.one {
-                transform: perspective(1300px) rotateY(20deg) translateZ(270px)
-                    scale(0.5);
-                + .shadow.two {
+            will-change: transform;
+            + .main__background {
+                transform: perspective(1300px) rotateY(20deg) translateZ(370px)
+                    scale(0.51);
+                background: linear-gradient(
+                    45deg,
+                    #45f3ff,
+                    #00ff66,
+                    #00ffff,
+                    #ff00ff,
+                    #ff0099,
+                    #6e0dd0,
+                    #ff3300,
+                    #099fff
+                );
+                background-size: 400%;
+                opacity: 1;
+                will-change: transform;
+                + .shadow.one {
                     transform: perspective(1300px) rotateY(20deg)
-                        translateZ(160px) scale(0.5);
+                        translateZ(370px) scale(0.5);
+                    will-change: transform;
+                    + .shadow.two {
+                        transform: perspective(1300px) rotateY(20deg)
+                            translateZ(370px) scale(0.5);
+                        will-change: transform;
+                    }
                 }
             }
         }
@@ -407,15 +444,37 @@
         animation: animate 6s linear infinite;
     }
 
+    .main__background {
+        position: absolute;
+        width: calc(100% + 5px);
+        height: calc(100vh + 5px);
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transition: 0.5s;
+        will-change: transform;
+        z-index: 0;
+        background: white;
+        background-size: 400%;
+        animation: main-background-animation 0.6s ease-out,
+            animate-background-main 10s ease-in-out infinite;
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
+            scale(0.5);
+        cursor: url(../../public/cursor/arrow.cur) 4 12, auto;
+    }
     .shadow.one {
         animation: shadow-one 0.6s ease-out;
         transform: perspective(1300px) rotateY(20deg) translateZ(215px)
             scale(0.5);
+        will-change: transform;
     }
     .shadow.two {
         animation: shadow-two 0.6s ease-out;
         transform: perspective(1300px) rotateY(20deg) translateZ(120px)
             scale(0.5);
+        will-change: transform;
     }
     .links a {
         animation: appear 0.5s forwards ease var(--i);
@@ -429,8 +488,20 @@
         transform: translate(0);
     }
     to {
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
+        transform: perspective(1300px) rotateY(20deg) translateZ(405px)
             scale(0.5);
+    }
+}
+
+@keyframes animate-background-main {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
     }
 }
 
@@ -444,29 +515,31 @@
 }
 
 @keyframes shadow-one {
-    0% {
+    from {
         transform: translate(0);
     }
-    5% {
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
-            scale(0.5);
-    }
-    100% {
+    to {
         transform: perspective(1300px) rotateY(20deg) translateZ(215px)
             scale(0.5);
     }
 }
 
 @keyframes shadow-two {
-    0% {
+    from {
         transform: translate(0);
     }
-    20% {
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
+    to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(120px)
             scale(0.5);
     }
-    100% {
-        transform: perspective(1300px) rotateY(20deg) translateZ(120px)
+}
+
+@keyframes main-background-animation {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px)
             scale(0.5);
     }
 }
