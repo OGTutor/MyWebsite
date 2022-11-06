@@ -9,7 +9,140 @@ import video from "./media/video/preloader.mp4";
 import gif from "./media/video/gif/sound.gif";
 import sound from "./media/sound.mp3";
 
+const content = {
+    first: { title: "Portfolio Page" },
+    secondLeft: {
+        position: "left",
+        image: `${image}`,
+        bg: false,
+        contents: "image"
+    },
+    thirdRight: {
+        position: "right",
+        video: `${video}`,
+        bg: true,
+        contents: "video"
+    },
+    fourthRight: {
+        position: "right",
+        title: "Lorem ipsum",
+        paragraph:
+            "Lorem ipsum dolor sit amet, consectetur elit. Rerum dolorem assumenda consequatur dicta error iure laboriosam temporibus omnis quae eaque aliquam esse unde accusamus dolores non soluta.",
+        bg: false,
+        contents: "text"
+    },
+    fifthLeft: {
+        position: "left",
+        image: `${image}`,
+        bg: true,
+        contents: "image"
+    },
+    sixthRight: {
+        position: "right",
+        image: `${image}`,
+        bg: true,
+        contents: "image"
+    },
+    seventhLeft: {
+        position: "left",
+        title: "Lorem ipsum",
+        paragraph:
+            "Lorem ipsum dolor sit amet, consectetur elit. Rerum dolorem assumenda consequatur dicta error iure laboriosam temporibus omnis quae eaque aliquam esse unde accusamus dolores non soluta.",
+        bg: false,
+        contents: "text"
+    },
+    eighthRight: {
+        position: "right",
+        image: `${image}`,
+        bg: true,
+        contents: "image"
+    },
+    ninthLeft: {
+        position: "left",
+        video: `${video}`,
+        bg: false,
+        contents: "video"
+    },
+    tenthRight: {
+        position: "right",
+        image: `${image}`,
+        bg: true,
+        contents: "image"
+    }
+};
+
 const PortfolioPage = () => {
+    const chooseTheContent = (element) => {
+        console.log(element);
+        switch (element.contents) {
+            case "image":
+                return (
+                    <>
+                        <div
+                            className={element.bg ? "frame frame_bg" : "frame"}
+                        >
+                            <div className="frame__content">
+                                <div
+                                    className={
+                                        element.position === "left"
+                                            ? "frame-media frame-media_left"
+                                            : "frame-media frame-media_right"
+                                    }
+                                    style={{
+                                        backgroundImage: `url(${element.image})`
+                                    }}
+                                ></div>
+                            </div>
+                        </div>
+                        <div className="frame"></div>
+                    </>
+                );
+            case "video":
+                return (
+                    <>
+                        <div
+                            className={element.bg ? "frame frame_bg" : "frame"}
+                        >
+                            <div className="frame__content">
+                                <video
+                                    className={
+                                        element.position === "left"
+                                            ? "frame-media frame-media_left"
+                                            : "frame-media frame-media_right"
+                                    }
+                                    src={element.video}
+                                    autoPlay
+                                    loop
+                                    muted
+                                ></video>
+                            </div>
+                        </div>
+                        <div className="frame"></div>
+                    </>
+                );
+            case "text":
+                return (
+                    <>
+                        <div
+                            className={element.bg ? "frame frame_bg" : "frame"}
+                        >
+                            <div
+                                className={
+                                    element.position === "left"
+                                        ? "frame__content text-left"
+                                        : "frame__content text-right"
+                                }
+                            >
+                                <h3>{element.title}</h3>
+                                <p>{element.paragraph}</p>
+                            </div>
+                        </div>
+                        <div className="frame"></div>
+                    </>
+                );
+        }
+    };
+
     window.onscroll = function () {
         const zSpacing = -1000;
         let lastPos = zSpacing / 5;
@@ -79,24 +212,22 @@ const PortfolioPage = () => {
                             <div id="progressBar" className="progressBar"></div>
                             <div id="scrollPath"></div>
                             <section className="gallery">
-                                <div className="frame">
-                                    <div className="frame__content">
-                                        <h2>Portfolio Page</h2>
-                                    </div>
-                                </div>
+                                {Object.values(content).map((element, idx) =>
+                                    idx === 0 ? (
+                                        <>
+                                            <div className="frame" key={idx}>
+                                                <div className="frame__content">
+                                                    <h2>{element.title}</h2>
+                                                </div>
+                                            </div>
+                                            <div className="frame"></div>
+                                        </>
+                                    ) : (
+                                        <>{chooseTheContent(element)}</>
+                                    )
+                                )}
 
-                                <div className="frame">
-                                    <div className="frame__content">
-                                        <div
-                                            className="frame-media frame-media_left"
-                                            style={{
-                                                backgroundImage: `url(${image})`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div>
-
-                                <div className="frame frame_bg">
+                                {/* <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <video
                                             className="frame-media frame-media_right"
@@ -106,11 +237,11 @@ const PortfolioPage = () => {
                                             muted
                                         ></video>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="frame"></div>
+                                {/* <div className="frame"></div> */}
 
-                                <div className="frame">
+                                {/* <div className="frame">
                                     <div className="frame__content text-right">
                                         <h3>Lorem ipsum</h3>
                                         <p>
@@ -121,9 +252,9 @@ const PortfolioPage = () => {
                                             laboriosam temporibus.
                                         </p>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="frame frame_bg">
+                                {/* <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_left"
@@ -134,9 +265,9 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="frame"></div>
+                                <div className="frame"></div> */}
 
-                                <div className="frame frame_bg">
+                                {/* <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
@@ -147,9 +278,9 @@ const PortfolioPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="frame"></div>
+                                <div className="frame"></div> */}
 
-                                <div className="frame">
+                                {/* <div className="frame">
                                     <div className="frame__content text-left">
                                         <h3>Lorem ipsum</h3>
                                         <p>
@@ -161,9 +292,9 @@ const PortfolioPage = () => {
                                             accusamus dolores non soluta.
                                         </p>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="frame frame_bg">
+                                {/* <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
@@ -172,9 +303,9 @@ const PortfolioPage = () => {
                                             }}
                                         ></div>
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="frame">
+                                {/* <div className="frame">
                                     <div className="frame__content">
                                         <video
                                             className="frame-media frame-media_left"
@@ -187,9 +318,9 @@ const PortfolioPage = () => {
                                 </div>
 
                                 <div className="frame"></div>
-                                <div className="frame"></div>
+                                <div className="frame"></div> */}
 
-                                <div className="frame frame_bg">
+                                {/* <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <div
                                             className="frame-media frame-media_right"
@@ -198,7 +329,7 @@ const PortfolioPage = () => {
                                             }}
                                         ></div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 <div className="frame frame_bg">
                                     <div className="frame__content">

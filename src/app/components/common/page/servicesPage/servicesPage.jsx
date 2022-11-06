@@ -8,6 +8,14 @@ import imageThree from "./img/cards/3.jpg";
 import imageFour from "./img/cards/4.jpg";
 import imageFive from "./img/cards/5.png";
 
+const content = {
+    imageOne: { title: "This One", image: `${imageOne}` },
+    imageTwo: { title: "This Two", image: `${imageTwo}` },
+    imageThree: { title: "This Three", image: `${imageThree}` },
+    imageFour: { title: "This Four", image: `${imageFour}` },
+    imageFive: { title: "This Five", image: `${imageFive}` }
+};
+
 const ServicesPage = () => {
     const handleClickOnCard = (event) => {
         const slides = document.querySelectorAll(".slide");
@@ -23,52 +31,25 @@ const ServicesPage = () => {
             <div className="screen" id="Services">
                 <div className="main">
                     <header className="header_two">
-                        <div id="progressBar" className="progressBar"></div>
-                        <div id="scrollPath"></div>
                         <div className="container">
-                            <div
-                                className="slide active"
-                                onClick={(event) => handleClickOnCard(event)}
-                                style={{ backgroundImage: `url(${imageOne})` }}
-                            >
-                                <h3 className="textCard">This One</h3>
-                            </div>
-                            <div
-                                className="slide"
-                                onClick={(event) => handleClickOnCard(event)}
-                                style={{
-                                    backgroundImage: `url(${imageTwo})`
-                                }}
-                            >
-                                <h3 className="textCard">This One</h3>
-                            </div>
-                            <div
-                                className="slide"
-                                onClick={(event) => handleClickOnCard(event)}
-                                style={{
-                                    backgroundImage: `url(${imageThree})`
-                                }}
-                            >
-                                <h3 className="textCard">This One</h3>
-                            </div>
-                            <div
-                                className="slide"
-                                onClick={(event) => handleClickOnCard(event)}
-                                style={{
-                                    backgroundImage: `url(${imageFour})`
-                                }}
-                            >
-                                <h3 className="textCard">This One</h3>
-                            </div>
-                            <div
-                                className="slide"
-                                onClick={(event) => handleClickOnCard(event)}
-                                style={{
-                                    backgroundImage: `url(${imageFive})`
-                                }}
-                            >
-                                <h3 className="textCard">This One</h3>
-                            </div>
+                            {Object.values(content).map((element, idx) => (
+                                <div
+                                    key={idx}
+                                    className={
+                                        idx === 0 ? "slide active" : "slide"
+                                    }
+                                    onClick={(event) =>
+                                        handleClickOnCard(event)
+                                    }
+                                    style={{
+                                        backgroundImage: `url(${element.image})`
+                                    }}
+                                >
+                                    <h3 className="textCard">
+                                        {element.title}
+                                    </h3>
+                                </div>
+                            ))}
                         </div>
                     </header>
                 </div>

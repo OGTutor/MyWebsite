@@ -5,7 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./styles/main.scss";
 import "./styles/logoGlitch.scss";
-import "./styles/logo.css";
 import "./styles/scrollNeon.css";
 
 import App from "./app/App";

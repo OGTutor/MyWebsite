@@ -3,6 +3,38 @@
     padding: 0;
 }
 
+.box_logo {
+    position: relative;
+    width: 180px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_logo h3 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #ff00d4, 0 0 20px #ff00d4, 0 0 40px #ff00d4,
+        0 0 80px #ff00d4, 0 0 120px #ff00d4;
+}
+
+.lightbar {
+    position: absolute;
+    top: 1.5;
+    left: 0;
+    width: 5px;
+    height: 45px;
+    border-radius: 10px;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+        0 0 80px #00b3ff, 0 0 120px #00b3ff;
+    animation: animatelightbar 5s linear infinite;
+}
+
 .logo {
     height: 100%;
     width: 100%;
@@ -16,10 +48,15 @@
         background: url("../../public/logo/neon.png") no-repeat center / contain;
         animation: image-animation 0.1s linear infinite;
         .boxGlitch {
+            position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
+            text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+                -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+                0 -0.5rem 2rem #ff00d4, 0 0.5rem 3rem #ff00d4;
+            animation: shine 2s forwards, flicker 3s infinite;
             .glitch {
                 top: 1px;
                 font-size: 1.4rem;
@@ -54,6 +91,13 @@
                     animation: glitch-after 2s linear 0s infinite
                         alternate-reverse;
                 }
+                .flicker {
+                    animation: shine 2s forwards, blink 3s 2s infinite;
+                }
+
+                .fast-flicker {
+                    animation: shine 2s forwards, blink 10s 1s infinite;
+                }
             }
         }
     }
@@ -85,6 +129,184 @@
         opacity: 0.8;
     }
     100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animatelightbar {
+    0%,
+    5% {
+        transform: scaleY(0) translateX(0);
+    }
+    10% {
+        transform: scaleY(1) translateX(0);
+    }
+    90% {
+        transform: scaleY(1) translateX(calc(180px - 10px));
+    }
+    95%,
+    100% {
+        transform: scaleY(0) translateX(calc(180px - 10px));
+    }
+}
+
+@keyframes blink {
+    0%,
+    22%,
+    36%,
+    75% {
+        color: rgb(0, 255, 255);
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+            -0.2rem 0.1rem 1rem #6568ff, 0.2rem 0.1rem 1rem #65d3ff,
+            0 -0.5rem 2rem #d30ab1, 0 0.5rem 3rem #42afbd;
+    }
+    28%,
+    33% {
+        color: #6568ff;
+        text-shadow: none;
+    }
+    82%,
+    97% {
+        color: #8c00ff;
+        text-shadow: none;
+    }
+}
+
+@keyframes shine {
+    0% {
+        color: #aa06f7;
+        text-shadow: none;
+    }
+    100% {
+        color: #0ae6ee;
+        text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+            -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+            0 -0.5rem 2rem #00eeff, 0 0.5rem 3rem #ff00d4;
+    }
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+
+    4% {
+        opacity: 0.9;
+    }
+
+    6% {
+        opacity: 0.85;
+    }
+
+    8% {
+        opacity: 0.95;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    11% {
+        opacity: 0.922;
+    }
+
+    12% {
+        opacity: 0.9;
+    }
+
+    14% {
+        opacity: 0.95;
+    }
+
+    16% {
+        opacity: 0.98;
+    }
+
+    17% {
+        opacity: 0.9;
+    }
+
+    19% {
+        opacity: 0.93;
+    }
+
+    20% {
+        opacity: 0.99;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    26% {
+        opacity: 0.94;
+    }
+
+    28% {
+        opacity: 0.98;
+    }
+
+    37% {
+        opacity: 0.93;
+    }
+
+    38% {
+        opacity: 0.5;
+    }
+
+    39% {
+        opacity: 0.96;
+    }
+
+    42% {
+        opacity: 1;
+    }
+
+    44% {
+        opacity: 0.97;
+    }
+
+    46% {
+        opacity: 0.94;
+    }
+
+    56% {
+        opacity: 0.9;
+    }
+
+    58% {
+        opacity: 0.9;
+    }
+
+    60% {
+        opacity: 0.99;
+    }
+
+    68% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.9;
+    }
+
+    72% {
+        opacity: 0.95;
+    }
+
+    93% {
+        opacity: 0.93;
+    }
+
+    95% {
+        opacity: 0.95;
+    }
+
+    97% {
+        opacity: 0.93;
+    }
+
+    to {
         opacity: 1;
     }
 }

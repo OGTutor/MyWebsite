@@ -18,7 +18,15 @@ const NavBar = () => {
                             <div className="lightbar"></div>
                             <div className="topLayer"></div>
                             <div className="boxGlitch">
-                                <h3 className="glitch">OGTutor</h3>
+                                <h3 className="glitch">
+                                    <span className="fast-flicker">O</span>
+                                    <span className="flicker">G</span>
+                                    <span className="fast-flicker">T</span>
+                                    <span className="flicker">u</span>
+                                    <span className="fast-flicker">t</span>
+                                    <span className="flicker">o</span>
+                                    <span className="fast-flicker">r</span>
+                                </h3>
                             </div>
                         </div>
                     </div>
