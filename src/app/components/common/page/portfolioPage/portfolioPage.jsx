@@ -73,11 +73,11 @@ const content = {
 
 const PortfolioPage = () => {
     const chooseTheContent = (element) => {
-        console.log(element);
         switch (element.contents) {
             case "image":
                 return (
                     <>
+                        <div className="frame"></div>
                         <div
                             className={element.bg ? "frame frame_bg" : "frame"}
                         >
@@ -144,8 +144,8 @@ const PortfolioPage = () => {
     };
 
     window.onscroll = function () {
-        const zSpacing = -1000;
-        let lastPos = zSpacing / 5;
+        const zSpacing = -610;
+        let lastPos = zSpacing / 8;
         const $frames = document.getElementsByClassName("frame");
         const frames = Array.from($frames);
         const zVals = [];
@@ -221,116 +221,12 @@ const PortfolioPage = () => {
                                                 </div>
                                             </div>
                                             <div className="frame"></div>
+                                            <div className="frame"></div>
                                         </>
                                     ) : (
                                         <>{chooseTheContent(element)}</>
                                     )
                                 )}
-
-                                {/* <div className="frame frame_bg">
-                                    <div className="frame__content">
-                                        <video
-                                            className="frame-media frame-media_right"
-                                            src={`${video}`}
-                                            autoPlay
-                                            loop
-                                            muted
-                                        ></video>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="frame"></div> */}
-
-                                {/* <div className="frame">
-                                    <div className="frame__content text-right">
-                                        <h3>Lorem ipsum</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur elit adipisicing. Nemo
-                                            fugit, rerum dolorem assumenda
-                                            consequatur dicta error iure
-                                            laboriosam temporibus.
-                                        </p>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="frame frame_bg">
-                                    <div className="frame__content">
-                                        <div
-                                            className="frame-media frame-media_left"
-                                            style={{
-                                                backgroundImage: `url(${image})`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div>
-
-                                <div className="frame"></div> */}
-
-                                {/* <div className="frame frame_bg">
-                                    <div className="frame__content">
-                                        <div
-                                            className="frame-media frame-media_right"
-                                            style={{
-                                                backgroundImage: `url(${image})`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div>
-
-                                <div className="frame"></div> */}
-
-                                {/* <div className="frame">
-                                    <div className="frame__content text-left">
-                                        <h3>Lorem ipsum</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur elit. Rerum dolorem
-                                            assumenda consequatur dicta error
-                                            iure laboriosam temporibus omnis
-                                            quae eaque aliquam esse unde
-                                            accusamus dolores non soluta.
-                                        </p>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="frame frame_bg">
-                                    <div className="frame__content">
-                                        <div
-                                            className="frame-media frame-media_right"
-                                            style={{
-                                                backgroundImage: `url(${image})`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="frame">
-                                    <div className="frame__content">
-                                        <video
-                                            className="frame-media frame-media_left"
-                                            src={`${video}`}
-                                            autoPlay
-                                            loop
-                                            muted
-                                        ></video>
-                                    </div>
-                                </div>
-
-                                <div className="frame"></div>
-                                <div className="frame"></div> */}
-
-                                {/* <div className="frame frame_bg">
-                                    <div className="frame__content">
-                                        <div
-                                            className="frame-media frame-media_right"
-                                            style={{
-                                                backgroundImage: `url(${image})`
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div> */}
-
                                 <div className="frame frame_bg">
                                     <div className="frame__content">
                                         <video

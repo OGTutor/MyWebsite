@@ -7,7 +7,6 @@ import Portfolio from "../../layouts/portfolio";
 import Testimonials from "../../layouts/testimonials";
 import About from "../../layouts/about";
 import Contact from "../../layouts/contact";
-import Clock from "../common/clock/clock";
 import video from "./media/MainTheme.mp4";
 import Button from "../common/button/button";
 

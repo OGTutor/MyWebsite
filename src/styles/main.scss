@@ -275,31 +275,6 @@
                         align-items: center;
                         font-size: 2.7rem;
                     }
-                    .btn {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border: none;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-family: "assassin-st";
-                        .button {
-                            position: relative;
-                            display: inline-block;
-                            padding: 15px 30px;
-                            color: #2196f3;
-                            text-transform: uppercase;
-                            text-decoration: none;
-                            font-size: 24px;
-                            letter-spacing: 4px;
-                            overflow: hidden;
-                            transition: 0.2s;
-                            will-change: transform;
-                            cursor: url(../../public/cursor/arrow.cur) 4 12,
-                                auto;
-                        }
-                    }
                 }
             }
         }
