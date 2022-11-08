@@ -3,13 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/ui/layout";
 
-import Home from "./layouts/home";
-import Services from "./layouts/services";
-import Portfolio from "./layouts/portfolio";
-import Testimonials from "./layouts/testimonials";
-import About from "./layouts/about";
-import Contact from "./layouts/contact";
-
 import Preloader from "./components/common/preloader/preloader";
 
 const App = () => {
@@ -25,15 +18,7 @@ const App = () => {
         <Preloader />
     ) : (
         <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route path="/home" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/testimonials" element={<Testimonials />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<Home />} />
-            </Route>
+            <Route path="/" element={<Layout />} />
         </Routes>
     );
 };

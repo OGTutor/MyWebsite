@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
-import NavBar from "../navBar/navBar";
-import Model3D from "../../3dModelOnHomePage/3dModel";
+import NavBar from "../../navBar/navBar";
 
 import mainImage from "./img/bghome.jpg";
 import middleImage from "./img/finalMiddle.png";
@@ -32,7 +31,6 @@ const HomePage = () => {
                     <header className="header_one">
                         <div className="container">
                             <header className="main-header">
-                                <Model3D />
                                 <div className="layers">
                                     <div className="layer__header">
                                         <div className="layers__caption">

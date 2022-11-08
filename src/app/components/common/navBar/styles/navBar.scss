@@ -1,0 +1,100 @@
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 0.3rem;
+    .menu {
+        max-width: 72rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        .burger {
+            height: 50px;
+            width: 55px;
+            border-radius: 125px;
+            cursor: url(../../../../../../public/cursor/arrow.cur) 4 12, auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+                0 0 80px #00b3ff, 0 0 120px #00b3ff;
+            animation: animate__burger 5s ease-in-out infinite;
+            .bar {
+                width: 30px;
+                height: 2px;
+                border-radius: 12px;
+                background-color: #eee;
+                transition: all 0.5s ease-in-out;
+                will-change: transform;
+                position: relative;
+                right: 11px;
+                top: auto;
+                box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+                    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+                animation: animate__burger 5s ease-in-out infinite;
+                &:before {
+                    content: "";
+                    border-radius: 12px;
+                    position: absolute;
+                    width: 30px;
+                    height: 3px;
+                    background: #eee;
+                    transition: all 0.5s ease-in-out;
+                    will-change: transform;
+                    box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff,
+                        0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+                }
+                &:after {
+                    content: "";
+                    border-radius: 12px;
+                    position: absolute;
+                    width: 30px;
+                    height: 3px;
+                    background: #eee;
+                    transition: all 0.5s ease-in-out;
+                    will-change: transform;
+                    box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff,
+                        0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff;
+                }
+                &:before {
+                    transform: translateY(-16px);
+                }
+                &:after {
+                    transform: translateY(16px);
+                }
+            }
+            .bar.open {
+                transform: translateX(-50px);
+                background: transparent;
+                box-shadow: none;
+            }
+            .bar.open::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+            .bar.open::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+        }
+    }
+}
+
+@keyframes animate__burger {
+    0% {
+        box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+            0 0 80px #00b3ff, 0 0 120px #00b3ff;
+    }
+    50% {
+        box-shadow: 0 0 20px #00b3ff, 0 0 10px #ff00d4, 0 0 30px #00b3ff,
+            0 0 20px #00b3ff, 0 0 100px #ff00d4;
+    }
+    100% {
+        box-shadow: 0 0 10px #ff00d4, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+            0 0 80px #00b3ff, 0 0 120px #00b3ff;
+    }
+}

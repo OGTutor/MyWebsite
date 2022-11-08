@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useMemo } from "react";
+
+import Model3D from "../common/3dModelOnHomePage/3dModel";
 
 import Home from "../../layouts/home";
 import Services from "../../layouts/services";
@@ -12,13 +13,10 @@ import Button from "../common/button/button";
 
 const Layout = () => {
     const [screen, setScreen] = useState("Home");
-    const navigate = useNavigate();
     const container = document.querySelector(".container");
 
     const handleMouseEnter = (event) => {
         event.preventDefault();
-
-        navigate(`/${screen.toLowerCase()}`, { replace: true });
 
         switch (event.target.name) {
             case "Home":
@@ -63,8 +61,11 @@ const Layout = () => {
         }
     };
 
+    const component = useMemo(() => setComponent(), [screen]);
+
     return (
         <>
+            <Model3D />
             <div className="links">
                 <ul>
                     <li>
@@ -129,8 +130,7 @@ const Layout = () => {
                     </li>
                 </ul>
             </div>
-            {setComponent()}
-            {/* <Clock /> */}
+            {component}
             <video
                 src={`${video}`}
                 className="showcase__video"

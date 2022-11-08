@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
 
-import NavBar from "../navBar/navBar";
+import NavBar from "../../navBar/navBar";
 
 import instImage from "./img/img1f.png";
 import telegramImage from "./img/img2.png";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavBar from "../navBar/navBar";
+import NavBar from "../../navBar/navBar";
 
 import imageOne from "./img/cards/1.jpg";
 import imageTwo from "./img/cards/2.jpg";
